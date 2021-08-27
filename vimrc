@@ -278,6 +278,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>w :update<cr>
 nnoremap <leader>q :q<cr>
+nnoremap <leader><leader>q :q!<cr>
 nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
 nnoremap <leader>e gg=G
@@ -612,17 +613,19 @@ nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
 map  <Leader><Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 
-nmap s <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-s)
 nmap t <Plug>(easymotion-t2)
 
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
+map * <Plug>(easymotion-sn)<C-R><C-W><CR>
+
 " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
 " Without these mappings, `n` & `N` works fine. (ThPlugin 'romainl/vim-qf'ese mappings just provide
 " different highlight method and have some other features )
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+map n <Plug>(easymotion-next)
+map N <Plug>(easymotion-prev)
 
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
@@ -631,6 +634,11 @@ map <Leader><Leader>l <Plug>(easymotion-lineforward)
 map <Leader><Leader>h <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
 
 "------vim-commtary-------- "
 map  gc  <Plug>Commentary
